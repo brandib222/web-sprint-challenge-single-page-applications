@@ -7,12 +7,15 @@ describe('Pizza App', () => {
 
     const nameInput = () => cy.get('input[name=name]');
     const emailInput = () => cy.get('input[name=email');
-    const sizeInput = () => cy.get('input[name=size');
+    const sizeInput = () => cy.get('input[name=size-dropdown');
     const pepperoniInput = () => cy.get('input[name=pepperoni');
     const pineappleInput = () => cy.get('input[name=pineapple');
     const cheeseInput = () => cy.get('input[name=cheese');
     const veggiesInput = () => cy.get('input[name=veggies');
     const specialInput = () => cy.get('input[name=special');
+
+
+
 
     it('can type in the inputs', () => {
         nameInput()

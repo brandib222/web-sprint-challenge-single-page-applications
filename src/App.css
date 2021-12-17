@@ -57,8 +57,8 @@ nav {
 button {
   background: url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBpenphfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
   background-position: center;
-  
-  font-size: 25px;
+  opacity: 0.8;
+  font-size: 50px;
   font-weight: 900;
   color: black;
   background-color: rgb(224, 39, 39);
@@ -70,16 +70,23 @@ button {
   
 }
 
+.top-container {
+  background-color: rgb(49, 47, 47);
+  color: white;
+  margin: 3%;
+}
+
 .end-container {
   display: flex;
   flex-flow: row wrap;
   padding: 0% 4%;
   justify-content: center;
+  background-color: rgb(49, 47, 47);
 }
 
 
 img {
-  width: 45%%;
+  width: 25%;
   height: auto;
   margin: 3%;
 }
@@ -88,6 +95,12 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  
+  text-align: center;
+  font-size: 40px;
+  padding: 3%;
+}
 .inputs {
   color: white;
   display: flex;
@@ -95,7 +108,7 @@ h2 {
   justify-content: center;
   font-size: 30px;
   padding: 0% 10%;
-  background: url('https://images.unsplash.com/photo-1561350111-7daa4f284bc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBpenphfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  background: rgb(49, 47, 47);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -132,3 +145,4 @@ h2 {
 #special-text{
   padding: 3%;
 }
+

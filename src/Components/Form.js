@@ -23,7 +23,7 @@ export default function Form(props) {
     return (
         <form id='pizza-form' onSubmit={onSubmit}>
             <div className='form-group'>
-                <h2 className='title'>Time to make a choice</h2>
+                <h2 className='title'>Time to make choices</h2>
                 <div className='errors'>
                     <div>{errors.name}</div>
                     <div>{errors.email}</div>
@@ -94,7 +94,9 @@ export default function Form(props) {
                             type='text'
                         />
                     </label>
-                    <button id='order-button' disabled={disabled}>submit</button>
+                    <div className='btn-container'>
+                        <button id='order-button' disabled={disabled} onClick={onSubmit}>submit</button>
+                    </div>
                 </div>
             </div>
         </form>
