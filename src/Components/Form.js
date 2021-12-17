@@ -25,7 +25,7 @@ export default function Form(props) {
             <div className='form-group'>
                 <h2 className='title'>Time to make a choice</h2>
                 <div className='inputs' id='pizza-form'>
-                    <label className='name-input'>Name:
+                    <label id='name-input'>Name:
                         <input 
                             value={values.name}
                             onChange={onChange}
