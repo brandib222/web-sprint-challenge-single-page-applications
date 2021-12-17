@@ -6,6 +6,7 @@ import Order from './Components/Order.js';
 import * as yup from 'yup';
 import schema from './formSchema.js';
 import axios from 'axios';
+import './App.css'
 
 const initialFormValues = {
   name: '',
@@ -78,8 +79,8 @@ const App = () => {
       <nav>
           <div className='nav-wrapper'>
               <nav>
-                  <Link to='/'>Home</Link>
-                  <Link to='/pizza'>Order your 'za</Link>
+                  <Link className='home-btn' to='/'>Home</Link>
+                  <Link className='order-btn' to='/pizza'>Order your 'za</Link>
               </nav>
           </div>
       </nav>
