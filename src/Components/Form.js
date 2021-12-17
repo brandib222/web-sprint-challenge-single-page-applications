@@ -24,6 +24,11 @@ export default function Form(props) {
         <form id='pizza-form' onSubmit={onSubmit}>
             <div className='form-group'>
                 <h2 className='title'>Time to make a choice</h2>
+                <div className='errors'>
+                    <div>{errors.name}</div>
+                    <div>{errors.email}</div>
+                    <div>{errors.special}</div>
+                </div>
                 <div className='inputs' id='pizza-form'>
                     <label id='name-input'>Name:
                         <input 
@@ -40,6 +45,14 @@ export default function Form(props) {
                             name='email'
                             type='text'
                         />
+                    </label>
+                    <label id='size-dropdown'> Select Size:
+                        <select value={values.size} onChange={onChange} name='size-dropdown'>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra-large</option>
+                        </select>
                     </label>
                     <label className='topping-input-1'> Pepperoni
                         <input 

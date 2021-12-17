@@ -9,6 +9,7 @@ import axios from 'axios';
 const initialFormValues = {
   name: '',
   email: '',
+  size:'',
   topping1: false,
   topping2: false,
   topping3: false,
@@ -36,6 +37,7 @@ const App = () => {
   const postNewOrder = newOrder => {
     axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
+        console.log(res);
         setOrders([ res.data, ...order])
       }).catch(err => console.error(err))
       .finally(() => setFormValues(initialFormValues))
@@ -60,6 +62,7 @@ const App = () => {
     const newOrder = {
       name:formValues.name.trim(),
       email:formValues.email.trim(),
+      special:formValues.special.trim(),
     }
     postNewOrder(newOrder);
    
