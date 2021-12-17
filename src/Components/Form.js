@@ -54,7 +54,7 @@ export default function Form(props) {
                             <option value="4">Extra-large</option>
                         </select>
                     </label>
-                    <label className='topping-input-1'> Pepperoni
+                    <label className='pepperoni'> Pepperoni
                         <input 
                             type='checkbox'
                             name='pepperoni'
@@ -62,7 +62,7 @@ export default function Form(props) {
                             onChange={onChange}
                         />
                     </label>
-                    <label className='topping-input-2'> Pineapple
+                    <label className='pineapple'> Pineapple
                         <input 
                             type='checkbox'
                             name='pineapple'
@@ -70,7 +70,7 @@ export default function Form(props) {
                             onChange={onChange}
                         />
                     </label>
-                    <label className='topping-input-3'> Extra Cheese
+                    <label className='cheese'> Extra Cheese
                         <input 
                             type='checkbox'
                             name='cheese'
@@ -78,7 +78,7 @@ export default function Form(props) {
                             onChange={onChange}
                         />
                     </label>
-                    <label className='topping-input-4'> Veggies
+                    <label className='veggies'> Veggies
                         <input 
                             type='checkbox'
                             name='veggies'
@@ -95,7 +95,7 @@ export default function Form(props) {
                         />
                     </label>
                 </div>
-                <button id='submit' disabled={disabled}>submit</button>
+                <button id='order-button' disabled={disabled}>submit</button>
             </div>
         </form>
     )

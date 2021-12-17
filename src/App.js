@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Home from './Components/Home.js';
 import Form from './Components/Form.js';
+import Order from './Components/Order.js';
 import * as yup from 'yup';
 import schema from './formSchema.js';
 import axios from 'axios';
@@ -10,10 +11,10 @@ const initialFormValues = {
   name: '',
   email: '',
   size:'',
-  topping1: false,
-  topping2: false,
-  topping3: false,
-  topping4: false,
+  pepperoni: false,
+  pineapple: false,
+  cheese: false,
+  veggies: false,
   special: '',
 }
 
@@ -37,7 +38,6 @@ const App = () => {
   const postNewOrder = newOrder => {
     axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
-        console.log(res);
         setOrders([ res.data, ...order])
       }).catch(err => console.error(err))
       .finally(() => setFormValues(initialFormValues))
@@ -45,9 +45,9 @@ const App = () => {
 
   const validate = (name, value) => {
     yup.reach(schema, name)
-    .validate(value)
-    .then(() => setFormErrors({ ...formErrors, [name]: '' }))
-    .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
+      .validate(value)
+      .then(() => setFormErrors({ ...formErrors, [name]: '' }))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
   } 
 
   const inputChange = (name, value) => {
@@ -83,6 +83,13 @@ const App = () => {
               </nav>
           </div>
       </nav>
+      {
+        order.map(order => {
+          return (
+            <Order key={order.id} details={order} />
+          )
+        })
+      }
      <Switch>
         <Route exact path='/'>
           <Home />

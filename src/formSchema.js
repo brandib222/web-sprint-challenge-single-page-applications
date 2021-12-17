@@ -10,6 +10,16 @@ const formSchema = yup.object().shape({
         .string()
         .trim()
         .required('email is required'),
+    size: yup
+        .boolean(),
+    pepperoni: yup
+        .boolean(),
+    pineapple: yup
+        .boolean(),
+    cheese: yup
+        .boolean(),
+    veggies: yup
+        .boolean(),
     special:yup
         .string()
         .trim()
