@@ -4,6 +4,7 @@ import Home from './Components/Home.js';
 import Form from './Components/Form.js';
 import * as yup from 'yup';
 import schema from './formSchema.js';
+import axios from 'axios';
 
 const initialFormValues = {
   name: '',
@@ -12,12 +13,13 @@ const initialFormValues = {
   topping2: false,
   topping3: false,
   topping4: false,
-
+  special: '',
 }
 
 const initialFormErrors = {
   name: '',
   email: '',
+  special: '',
 }
 
 const initialOrder = [];
@@ -30,6 +32,14 @@ const App = () => {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
+
+  const postNewOrder = newOrder => {
+    axios.post('https://reqres.in/api/orders', newOrder)
+      .then(res => {
+        setOrders([ res.data, ...order])
+      }).catch(err => console.error(err))
+      .finally(() => setFormValues(initialFormValues))
+  }
 
   const validate = (name, value) => {
     yup.reach(schema, name)
@@ -51,7 +61,7 @@ const App = () => {
       name:formValues.name.trim(),
       email:formValues.email.trim(),
     }
-    setOrders(newOrder);
+    postNewOrder(newOrder);
    
   }
 
